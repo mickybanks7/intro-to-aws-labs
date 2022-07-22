@@ -33,6 +33,9 @@ systemctl enable httpd
 echo "Hello World from $(hostname -f)" > /var/www/html/index.html
 echo "Healthy" > /var/www/html/health.html
 
+Don't tick on the User data has already been base64 encoded
+Click on the button below that says launch template
+
 Step 5 (Documentation)
 Modify and update every step you took to achieve the lab, that was not captured in the lab instruction in your local repo Lab2.txt file and save.
 On the terminal run command git add Lab2.txt
