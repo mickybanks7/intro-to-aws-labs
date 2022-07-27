@@ -20,7 +20,7 @@ Note the AZ, add Tag Tag Key= Name and Value=Restored volume
 Delete your snapshot.
 Go to Elastic Block Store tab, click Volume, verify the existance of your new volume.
 
-Step 4 (NB: Use key pair and security group created in former lab)
+Step 4 (NB: Use key pair and security group created in former lab - make sure you allow all creation and deletion complete fully)
 Spin up another instance in the same AZ that you created the restored volume.
 Select the correct AZ under network settings
 Create instance.
