@@ -32,6 +32,7 @@ systemctl start httpd
 systemctl enable httpd
 echo "Hello World from $(hostname -f)" > /var/www/html/index.html
 echo "Healthy" > /var/www/html/health.html
+Click create launch template
 
 Don't tick on the User data has already been base64 encoded
 Click on the button below that says launch template
