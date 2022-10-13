@@ -66,7 +66,8 @@ Verify that the health status shows healthy.
 Step 7
 On EC2 dashboard click Load Balancers
 Copy the DNS name of the ALB and 
-post of the chat for verification
+Make sure your SG for both isntances is also showing on the ALB and not defualt SG (else webpage won't load)
+post on the chat for verification
 Copy the DNS name of the ALB and paste on a new webpage 
 Send screenshot
 Refresh to verify that the ALB is balancing the traffic between Webserver 1 and 2
