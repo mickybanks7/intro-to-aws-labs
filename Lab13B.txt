@@ -1,0 +1,54 @@
+Step 1 
+In VScode terminal,cd into the directory "intro-to-aws-lab"and run command 
+"git pull https://github.com/awscloudessentials/intro-to-aws-lab.git" to pull the Lab13.txt file into your local machine
+Open the  .txt file in VScode editor and follow instructions to finish the lab.
+
+Step 2
+create 2 S3 bucket name "demo-anyname-lab13b.com and demo-anyname-lab13b-target.com " (bucket name must be unique)
+uncheck block all public access on both
+check the acknowledgement
+click on create bucket
+
+Step 3
+go to the first bucket, upload "coffee.jpg", "index.html" and "error.html"
+click on properties tab, scrol down to static website hosting, click on edit
+check enable
+type index.html, type error.html and click save
+
+Step 4
+go to the second bucket, upload "extra-page.html"
+click on properties tab, scrol down to static website hosting, click on edit
+check enable type index.html and click on save
+
+
+Step 5
+click on permissions tab on each bucket
+go to bucket policy, click on edit
+copy bucket ARN 
+click on policy generator
+select "S3 Bucket policy"
+on effect select "allow"
+on principal type *
+on action checked "GetObject"
+paste the copied ARN and add "/*" at the end (arn:aws:s3:::demo-george-lab13.com/*)
+click on "add statement", click on generate policy and copy the generated policy
+go back to buckt policy and paste the generated policy (ensure that your cusor is at the beginning no space at the first line)
+On the first bucket click on properties, scroll to static website hosting and copy the url below paste on your browser screenshot and post on the group
+
+step 6
+On the second bucket click on "extra-page.html" copy the url paste on your browser, screenshot and post on the group
+on VScode open "index.html" file, under <script> tag, 
+go to "fetch" function, delete extra-page.html and paste the copied url (https://s3.ap-southeast-2.amazonaws.com/demo-eyibio-lab13b-target.com/extra-page.html)
+save your code
+upload the index.html to your first bucket
+
+step 7
+on same vscode open "CORS_CONFIG.JSON" file,
+copy the url of the first bucket(your static website) and paste in the "CORS_CONFIG.JSON" file, under "AllowedOrigin"
+copy the edited code, open your second bucket click on permissions and scroll down to Cross-origin resource sharing (CORS)
+click on edit and paste the edited code
+refresh the url of your static website, screenshot and post in the group
+also post your url for members to confirm.
+
+Step 8
+Edit this lab file in your VSCode editor with your additional steps, save, add, commit and push to your personal remote repo.
