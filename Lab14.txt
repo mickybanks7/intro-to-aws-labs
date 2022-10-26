@@ -1,0 +1,30 @@
+Step 1 
+In your terminal,cd into the directory "intro-to-aws-lab"and run command 
+"git pull https://github.com/awscloudessentials/intro-to-aws-lab.git" to pull the Lab14.txt file into your local machine
+Open the Lab14.txt file in VScode editor and follow instructions to finish the lab.Ensure you have AWSCli already installed
+
+Step 2
+Login into your AWS account and go to the IAM console
+Create a user "user1" 
+Give User1 console access only
+
+Step 3
+Create "user2"
+Give user2, programmatic access only
+
+Step 4 
+create an IAC group and attach an administrator policy to the group
+Add user1 and user2 to the group
+Login as user1  and create  user3 and give them console and programmatic access.
+As user1 create an s3 bucket and upload a file
+
+Step 5
+Login as user2 programmatically on your command line by creating a user2 profile with the credentials generated from IAM
+List the content of the s3 bucket created by user1 using the command "aws s3 ls --profile user2"
+Post screenshot
+
+Step 6
+Clean up your account by deleting user1, user2, user3, IAC group, s3 bucket and file etc.
+
+Step 7
+Edit the file in VSCode editor with any steps not captured above, save and push to your personal remote repo.
