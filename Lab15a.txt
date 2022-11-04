@@ -1,0 +1,37 @@
+Step 1
+
+go to iam click on role, click on create role, select aws service, select ec2, click next, 
+search and check AmazonS3FullAccess and SSMManagedInstanceCore and click next, 
+enter role name "ec2-s3-ssm", click on create role
+
+Step 2
+
+go to ec2 click on security group, create security group, name "dynamic-web-sg"
+inband rule http	source: anywhere ipv4(note no ssh but session manager role)
+
+Step 3
+
+go to s3 create bucket mygeorge-demo-site.com (use your own name/surname/nickname)
+upload all the download file into the your S3 bucket 
+
+Step 4
+
+launch an ec2 instance with name dynamic-web-app01, select aws linux 2 ami, t2.micro, 
+edit network setting and select subnet with AZ 1a, select security group dynamic-web-sg, select your keypair
+scoll down and click on advance details, on IAM instance profile, click the drop down and select ec2-s3-ssm role
+
+copy and paste the below script on user data (to install apache and lamp server with mariadb)
+
+#!/bin/bash
+sudo su
+yum update -y
+amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+yum install -y httpd mariadb-server
+yum info package_name
+systemctl start httpd
+systemctl enable httpd
+aws s3 cp s3://mygeorge-demo-site.com --region us-east-1 /var/www/html/ --recursive
+
+Step 5
+
+copy and paste your public dns in your browser and share link in the group
